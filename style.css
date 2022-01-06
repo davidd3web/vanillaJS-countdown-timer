@@ -1,0 +1,150 @@
+:root {
+  --step--2: clamp(0.78rem, 0.72rem + 0.33vw, 0.96rem);
+  --step--1: clamp(0.94rem, 0.84rem + 0.48vw, 1.2rem);
+  --step-0: clamp(1.13rem, 0.99rem + 0.68vw, 1.5rem);
+  --step-1: clamp(1.35rem, 1.16rem + 0.95vw, 1.88rem);
+  --step-2: clamp(1.62rem, 1.36rem + 1.32vw, 2.34rem);
+  --step-3: clamp(1.94rem, 1.59rem + 1.79vw, 2.93rem);
+  --step-4: clamp(2.33rem, 1.85rem + 2.42vw, 3.66rem);
+  --step-5: clamp(2.8rem, 2.15rem + 3.23vw, 4.58rem);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+
+h1 {
+  font-size: var(--step-5);
+  margin-bottom: max(5vh, 8rem);
+  text-transform: capitalize;
+  width: min(90%, 110em);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min(90%, 110em);
+}
+
+.countdown-timer {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  padding: 0 5rem;
+  width: min(90%, 50em);
+}
+
+.countdown-timer p,
+.countdown-event p,
+.select-date-container p {
+  font-size: var(--step-2);
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.countdown-timer span {
+  font-size: var(--step--2);
+  font-weight: 700;
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.select-date-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.countdown-event p,
+.select-date-container p {
+  margin-bottom: 6rem;
+}
+
+.selected-date,
+.countdown-event-input {
+  display: flex;
+  justify-content: space-around;
+}
+
+#countdown-event,
+.selected-date input {
+  border: none;
+  border-bottom: 1px solid #333;
+  font-size: var(--step-0);
+  width: 58%;
+}
+
+.countdown-event button,
+.selected-date button {
+  padding: 1.5rem 3.5rem;
+  cursor: pointer;
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: var(--step--1);
+  text-transform: uppercase;
+}
+
+.countdown-event,
+.select-date-container,
+.countdown-timer {
+  transform: translateX(-100vw);
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  height: 0;
+}
+
+.countdown-event,
+.select-date-container {
+  width: min(80%, 70em);
+}
+
+.active-class {
+  transform: translateX(0);
+  height: auto;
+  opacity: 1;
+}
+
+@media screen and (max-width: 60rem) {
+  .selected-date,
+  .countdown-event-input {
+    flex-direction: column;
+  }
+
+  #countdown-event,
+  #countdown-date {
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+}
+
+/* Validation */
+#countdown-event.incorrect-validation,
+#countdown-date.incorrect-validation {
+  border: 1px solid red;
+}
+
+#countdown-event.correct-validation,
+#countdown-date.correct-validation {
+  border: 1px solid lightgreen;
+}
+
+small {
+  color: red;
+  text-align: left;
+  margin-bottom: 0.5rem;
+  font-size: var(--step--1);
+}

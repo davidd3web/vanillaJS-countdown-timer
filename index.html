@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Countdown Timer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Your Countdown Timer</h1>
+  <main>
+
+    <div class="countdown-event countdown-step active-class">
+      <p>Please write down the event you're counting down for</p>
+      <div class="countdown-event-input">
+        <input type="text" name="countdown-event" id="countdown-event">
+        <button>Proceed to Date</button>
+      </div>
+    </div>
+
+    <div class="select-date-container countdown-step">
+      <p>Please select the date you wish to count down to</p>
+      <div class="selected-date">
+        <input type="date" name="year" id="countdown-date" placeholder="YYYY-MM-DD" min="2021-12-29">
+        <button>Ready For Countdown</button>
+      </div>
+    </div>
+
+    <div class="countdown-timer countdown-step">
+      <div class="days">
+        <p></p>
+        <span>Days</span>
+      </div>
+      <div class="hours">
+        <p></p>
+        <span>Hours</span>
+      </div>
+      <div class="minutes">
+        <p></p>
+        <span>Minutes</span>
+      </div>
+    </div>
+
+  </main>
+
+  <script type="module" src="/js/main.js"></script>
+</body>
+</html>
